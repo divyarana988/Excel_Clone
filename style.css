@@ -1,0 +1,40 @@
+body{
+    margin: 0;
+}
+*{
+    box-sizing: border-box;
+
+}
+.menu_container{
+    height: 80px;
+    background-color: rgb(16, 73, 16);
+    
+}
+.formula_container{
+    height: 30px;
+    background-color: rgb(229, 229, 182);
+}
+.grid_container{
+    height: calc(100vh - ( 80px + 30px + 30px ) );
+}
+.sheet_container{
+    height: 30px;
+    background-color: greenyellow;
+    display: flex;
+}
+.plus{
+    height: 100%;
+    width: 5%;
+    border: 1px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.icon{
+    font-size: 1.2rem;
+    color: white;
+}
+.sheet_list{
+    display: flex;
+
+}
