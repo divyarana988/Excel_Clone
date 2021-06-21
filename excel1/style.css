@@ -6,23 +6,23 @@ body{
     /* border:1px solid red; */
 }
 /* ********************* */
-.menu-container{
+.menu_container{
     background-color: rgb(2, 48, 12);
     height: 80px;
     display: flex;
     align-items: center;
 }
 /* future */
-.menu-container > *{
+.menu_container > *{
 height:80%;
 width:40%;
 border-right:2px solid;
 }
-.formatting-container{
+.formatting_container{
     display: flex;
     justify-content: space-around;
 }
-.active-btn{
+.active_btn{
     background-color:rgb(102, 91, 91);
     color: white;
 }
@@ -45,44 +45,58 @@ width:100%
     width:30%;
 }
 
-.color-container>*{
+.color_container>*{
     width:40%;
 }
-.color-container{
+.color_container{
     display: flex;
     justify-content: space-between;
 }
-.alignment-container{
+.alignment_container{
     display: flex;
     justify-content: center;
     align-items: center;
     
 }
-.alignment-container>*{
+.alignment_container>*{
     width:17%;
 }
 
+.open{
+    font-size: 2rem;
+}
+.new{
+    font-size: 2rem;
+}
+.download{
+    font-size: 2rem;
+}
 
+.bui_container{
+    display:flex;
+    margin-top: 10px;
+    justify-content: space-evenly;
+}
 
 
 
 
 /* ********************** */
 /* formula container styling starts here */
-.formula-container{
+.formula_container{
     background-color: rgb(220, 228, 231);
     height: 30px;
     display: flex;
     align-items: center;
 justify-content: space-evenly;
 }
-.address-box{
+.address_box{
 width:10%;
 }
 .seperator{
     width:2%;
 }
-.formula-box{
+.formula_box{
     width:80%;
 }
 
@@ -101,7 +115,7 @@ width:10%;
     height:40px;
     display: flex;
 }
-.add-sheet_container{
+.add_sheet_container{
     height: 100%;
     min-width:30px;
     border: 1px solid gray;
@@ -113,17 +127,17 @@ width:10%;
     font-size: 1.2rem;
     color:rgb(6, 46, 6);
 }
-.sheets-list{
+.sheets_list{
 
     display: flex;
     height: 100%;
     overflow-x: auto;
 }
-.sheets-list::-webkit-scrollbar {
+.sheets_list::-webkit-scrollbar {
     display: none;
   }
   /* Hide scrollbar for IE, Edge and Firefox */
-  .sheets-list {
+  .sheets_list {
     -ms-overflow-style: none;  /* IE and Edge */
     scrollbar-width: none;  /* Firefox */
   }
@@ -134,7 +148,7 @@ width:10%;
     justify-content: center;
     align-items: center;
 }
-.active-sheet
+.active_sheet
 {
     background-color: white;
 }
@@ -146,7 +160,7 @@ width:10%;
 
 
 /************************ grid container css *************************************/
-.top-left-block {
+.top_left_block {
     height: 30px;
     width: 25px;
     background-color: rgb(102, 97, 97);
@@ -155,7 +169,7 @@ width:10%;
     left:0px;
     z-index:100;
 }
-.top-row {
+.top_row {
     height: 30px;
     background-color: rgb(77, 155, 77);
     display: flex;
@@ -183,7 +197,7 @@ width:10%;
     align-items: center; */
 }
 
-.left-col {
+.left_col {
     width: 25px;
     border: 0.5px solid rgb(58, 57, 57);
     position: absolute;
@@ -191,7 +205,7 @@ width:10%;
     left:0px;
     z-index:90;
 }
-.left-col_box {
+.left_col_box {
     height: 30px;
     background-color: rgb(77, 155, 77);
     text-align: center;
