@@ -1,5 +1,4 @@
-// let a=10;
-// script -> grid
+
 
 ////////////////////columns//////////////////////////////////
 let topRow = document.querySelector(".top_row");
@@ -31,7 +30,12 @@ for (let i = 0; i < 100; i++) {
     str += "</div>";
 }
 grid.innerHTML = str;
+
+
+
 // initial load
+//for multiple sheets creating db
+
 let workSheetDB = [];
 function initCurrentSheetDb() {
     let sheetDB = [];
@@ -39,7 +43,7 @@ function initCurrentSheetDb() {
         let row = [];
         for (let j = 0; j < 26; j++) {
             let cell = {
-                bold: false,
+                bold: "normal",
                 italic: "normal",
                 underline: "none",
                 fontFamily: "Arial",
@@ -47,7 +51,9 @@ function initCurrentSheetDb() {
                 halign: "left",
                 value: "",
                 children: [],
-                formula: ""
+                formula: "",
+                bgColor: "white",
+                color: "black"
             }
 
             row.push(cell);
@@ -60,5 +66,3 @@ function initCurrentSheetDb() {
 }
 initCurrentSheetDb();
 
-//  2 d Array-> styling prop
-//  cell set 
