@@ -252,7 +252,6 @@ underlineElem.addEventListener("click", function () {
         cellObject.underline = false;
     }
 })
-
 colorElem.addEventListener("change", function() {
     let color = colorElem.value;
     console.log(color);
@@ -263,7 +262,6 @@ colorElem.addEventListener("change", function() {
     let cellObject = sheetDB[rid][cid];
     cellObject.color = color;
 })
-
 bgColorElem.addEventListener("change", function() {
     let val = bgColorElem.value;
 
@@ -358,6 +356,15 @@ formulaInput.addEventListener("keydown", function (e) {
         if (prevFormula == Newformula) {
             return;
         }
+
+        //detection of cycle
+        let isCyclePresent    = cycleDetect(address, Newformula);
+        if (isCyclePresent) {
+            console.log("cycle present");
+            return
+                ;
+        }
+
         if (prevFormula != "" && prevFormula != Newformula) {
             removeFormula(cellObject, address);
         }
@@ -467,4 +474,30 @@ function getRIdCIdfromAddress(address) {
     let rid = Number(cellrowAdr) - 1;
     return { cid, rid };
 
+}
+
+//////////////cycle detection///////////////////
+
+function cycleDetect(address, formula) {
+    let formulaTokens = formula.split(" ");
+    let { rid, cid } = getRIdCIdfromAddress(address);
+    let cellObject = sheetDB[rid][cid];
+    let children = cellObject.children;
+
+    for (let i0; i < children.length; i++){
+        let childAdd = children[i];
+        for (let i = 0; i < formulaTokens.length; i++){
+            let ascii = formulaTokens[i].charCodeAt(0);
+            if (ascii >= 65 && ascii <= 90) {
+                let parentCell = formulaTokens[i];
+
+                if ([parentCell == childAdd]) {
+                    alert("Cycle detected");
+                    return true;
+                }
+            }
+
+        }
+        return cycleDetect(childAdd, formula);
+    }
 }
